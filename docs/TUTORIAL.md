@@ -375,6 +375,25 @@ curl --noproxy '*' --interface en1 -4 \
 
 English: HTTP 204 is expected for this endpoint. UDP must also be checked: valid STUN responses from Cloudflare and Google were received in this case, with the proxy chain confirmed in Mihomo connection metadata. The existence of a TUN device alone does not prove UDP traffic is working.
 
+中文：附带的 macOS STUN 脚本会绑定物理接口并核对响应类型、事务 ID 和 magic cookie。先从路由器查询 STUN 服务的当前 IPv4；若结果是 `198.18.x.x`，应先检查 Fake-IP 过滤和映射，不能把其他 VPN 的映射地址当真实服务器。将下例占位符替换后执行。`--controller-secret-file` 为可选项，它只读取本地私人密钥，并输出是否观察到代理链，不输出节点名称或密钥。
+
+English: The included macOS probe binds a physical interface and checks response type, transaction ID and magic cookie. Query current STUN IPv4 addresses through the router. If the result is `198.18.x.x`, inspect Fake-IP filtering/mapping before treating it as a real server address. Replace the placeholders below. The optional secret-file argument reads a local private controller secret and reports only whether a proxy chain was observed.
+
+```sh
+# Computer / 电脑; use your current client IP and the freshly queried server IP.
+dig @192.168.10.1 stun.cloudflare.com A +short
+dig @192.168.10.1 stun.l.google.com A +short
+python3 scripts/verify_udp_stun.py --interface en1 --address YOUR_WIFI_IP \
+  --server CURRENT_CLOUDFLARE_IPV4 --port 3478 \
+  --controller-secret-file private/generated/controller-private.json
+python3 scripts/verify_udp_stun.py --interface en1 --address YOUR_WIFI_IP \
+  --server CURRENT_GOOGLE_IPV4 --port 19302
+```
+
+中文：STUN 成功只证明该 UDP 请求获得合法响应；只有同时观察到非 DIRECT 的 Mihomo 代理链，才能进一步证明该请求走了代理。控制器连接记录可能很快过期，未观察到记录时应重新测试或查看实时连接。
+
+English: A valid STUN reply establishes that request's UDP exchange. Observing a non-DIRECT Mihomo chain additionally establishes proxy usage. Connection records can expire quickly; a missing record calls for a fresh probe or live inspection.
+
 **验证通过后，路由器 / After passing checks, on router:**
 
 ```sh
