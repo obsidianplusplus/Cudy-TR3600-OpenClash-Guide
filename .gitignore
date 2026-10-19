@@ -1,0 +1,15 @@
+private/
+packages/
+*.sock
+.DS_Store
+__pycache__/
+.venv/
+*.pyc
+*.log
+*-working-*.tar.gz
+*-before-*.tar.gz
+subscription-*.yaml
+provider-*.yaml
+Cudy-OpenClash.yaml
+controller-private.json
+proxy-auth-private.*

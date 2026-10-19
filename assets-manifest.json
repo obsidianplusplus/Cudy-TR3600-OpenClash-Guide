@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "documented_date": "2026-10-19",
+  "tested_date": "2026-10-18",
+  "assets": [
+    {
+      "filename": "kmod-tun-6.12.93-r100.apk",
+      "url": "https://github.com/obsidianplusplus/Cudy-TR3600-OpenClash-Guide/releases/download/v1.0.0/kmod-tun-6.12.93-r100.apk",
+      "sha256": "80093e7ca9a4e690a2b18abca3ca9efac0a7bcd29803dbd0b23bbc456a01eeca",
+      "bytes": 26628
+    },
+    {
+      "filename": "libnetfilter-conntrack3-1.1.0-r100.apk",
+      "url": "https://github.com/obsidianplusplus/Cudy-TR3600-OpenClash-Guide/releases/download/v1.0.0/libnetfilter-conntrack3-1.1.0-r100.apk",
+      "sha256": "04204ba3e93752868489c80bb1ca1840a81be73916682f4093f866ccba89c59d",
+      "bytes": 39524
+    },
+    {
+      "filename": "luci-app-openclash-0.48.002.apk",
+      "url": "https://github.com/vernesong/OpenClash/releases/download/v0.48.002/luci-app-openclash-0.48.002.apk",
+      "sha256": "f7ebbd43f9be15c5e6df26e5d0c03d50d0bb8f7fa4cc0d2c2bf048b08c0b155b",
+      "bytes": 10702048
+    },
+    {
+      "filename": "mihomo-linux-arm64-v1.19.32.gz",
+      "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.32/mihomo-linux-arm64-v1.19.32.gz",
+      "sha256": "9dd862e28b46ff7d775f169cceebc28deccaa0a9e804237d421cd2571e0caba0",
+      "bytes": 20809592
+    },
+    {
+      "filename": "TR3600-adaptation-sources.tar.gz",
+      "url": "https://github.com/obsidianplusplus/Cudy-TR3600-OpenClash-Guide/releases/download/v1.0.0/TR3600-adaptation-sources.tar.gz",
+      "sha256": "20b234b9a00a982b6710b7f1e94cce9400f1cf062f17595312d8239a4174777f",
+      "bytes": 160447844,
+      "source_only": true
+    }
+  ]
+}

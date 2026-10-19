@@ -1,0 +1,11 @@
+# Reference fragment only / 仅作对照。
+config dhcp 'lan'
+        option interface 'lan'
+        option start '100'
+        option limit '150'
+        option leasetime '12h'
+        option dhcpv4 'server'
+        option dhcpv6 'server'
+        option ra 'server'
+        list ra_flags 'managed-config'
+        list ra_flags 'other-config'
